@@ -1,0 +1,3 @@
+rotationMotor.o: rotationMotor.cpp rotationMotor.h
+Event_Selection.o: Event_Selection.cpp Event_Selection.h rotationMotor.h
+main.o: main.cpp rotationMotor.h Event_Selection.h
