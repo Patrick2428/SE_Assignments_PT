@@ -38,9 +38,6 @@ uint8_t MaxValue = 255;
     checksum = (MaxValue- (dataValue + size));
  }
  
- 
-
- 
 }
 
 void DataFrame::setDataframe()
@@ -85,15 +82,8 @@ void DataFrame::showAll()const
 
 void DataFrame::clearFrame()
 {
-  for(auto &x : dataframe)
-  {
-    x = 0;
-  }
-  for(auto &y : data)
-  {
-    y = 0;
-  }
-
+  dataframe.fill(0);
+  data.fill(0);
   checksum = 0;
 
   std::cout<<"The dataframe was cleared" <<std::endl;

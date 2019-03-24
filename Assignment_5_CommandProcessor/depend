@@ -1,0 +1,4 @@
+CommandProcessor.o: CommandProcessor.cpp CommandProcessor.h \
+ rotationMotor.h
+rotationMotor.o: rotationMotor.cpp rotationMotor.h
+main.o: main.cpp rotationMotor.h CommandProcessor.h
