@@ -32,10 +32,11 @@ uint8_t MaxValue = 255;
  if(dataValue >= MaxValue)
  {
     checksum = 0;
+    std::cerr <<"Data Overloading" <<std::endl;
  }
  else
  {
-    checksum = (MaxValue- (dataValue + size));
+    checksum = (256- (dataValue + size));
  }
  
 }
@@ -91,14 +92,14 @@ void DataFrame::clearFrame()
 
 bool DataFrame::checksumIsCorrect()const
 {
-  uint8_t CheckValue = 0;
+  uint16_t CheckValue = 0;
 
   for(int x = 1; x < (size + 3); x++)
   {
     CheckValue += dataframe[x];
   }
   
-  if( CheckValue == 0xFF)
+  if( (CheckValue & 0xFF) == 0)
   {
     return true;
   }

@@ -3,7 +3,8 @@
 
 int main(void)
 {
-    CartVec2D cV1{-12.0,6.5}, cV2{5.5, 2.0};
+    CartVec2D cV1(-12.0,6.5), cV2(5.5, 2.0);
+    CartVec2D* pcV = new CartVec2D(2.5, 4.5);
 
     // Scalar multiplication
     std::cout << cV1 * 3.0 << std::endl;
@@ -17,12 +18,11 @@ int main(void)
 
     //Calculating magnitude
     std::cout << cV1.length() <<std::endl;
+    std::cout << pcV->length() <<std::endl;
 
     //+= operator
-    std::cout << cV1.operator+=(cV1) <<std::endl;
-    std::cout << cV1.operator-=(cV1) <<std::endl;
-
-
+    cV1 += cV2;
+    std::cout << cV1 <<std::endl;
 
     return 0;
 
