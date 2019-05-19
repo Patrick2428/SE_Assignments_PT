@@ -1,0 +1,2 @@
+devices.o: devices.cpp devices.h
+main.o: main.cpp devices.h
